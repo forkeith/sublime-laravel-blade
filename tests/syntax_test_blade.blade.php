@@ -194,7 +194,7 @@
 {{--               ^ keyword.operator.assignment.php --}}
 {{--                 ^^^^ variable.other.php --}}
 {{--                      ^^ keyword.operator.null-coalescing.php --}}
-{{--                         ^^^^^ constant.language.boolean.php --}}
+{{--                         ^^^^^ constant.language.boolean --}}
 {{--                              ^ punctuation.section.arguments.end.blade - source.php --}}
 
         @php($bool = $bool ?: true)
@@ -208,7 +208,7 @@
 {{--               ^ keyword.operator.assignment.php --}}
 {{--                 ^^^^^ variable.other.php --}}
 {{--                       ^^ keyword.operator.ternary.php --}}
-{{--                          ^^^^ constant.language.boolean.php --}}
+{{--                          ^^^^ constant.language.boolean --}}
 {{--                              ^ punctuation.section.arguments.end.blade - source.php --}}
     </div>
 
@@ -1200,3 +1200,66 @@
 {{--              ^ punctuation.separator.key-value.html --}}
 {{--               ^^^^^^^^^^^^^^^^^^^^^^^ meta.string.html string.quoted.double.html --}}
 {{--                                      ^ punctuation.definition.tag.end.html --}}
+
+    <template x-for="item in $some.collection">
+{{--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.tag.block.any.html --}}
+{{--^ punctuation.definition.tag.begin.html --}}
+{{-- ^^^^^^^^ entity.name.tag.block.any.html --}}
+{{--          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html --}}
+{{--          ^^^^^ entity.other.attribute-name.html --}}
+{{--               ^ punctuation.separator.key-value.html --}}
+{{--                ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.html --}}
+{{--                ^ string.quoted.double.html punctuation.definition.string.begin.html --}}
+{{--                 ^^^^^^^^^^^^^^^^^^^^^^^^ source.js.embedded.html --}}
+{{--                 ^^^^ variable.other.readwrite.js --}}
+{{--                      ^^ keyword.operator.js --}}
+{{--                         ^^^^^ variable.other.dollar.js --}}
+{{--                         ^ punctuation.dollar.js --}}
+{{--                              ^ punctuation.accessor.js --}}
+{{--                               ^^^^^^^^^^ meta.property.object.js --}}
+{{--                                         ^ string.quoted.double.html punctuation.definition.string.end.html --}}
+{{--                                          ^ punctuation.definition.tag.end.html --}}
+        <tr>
+            <td x-text="item.name"></td>
+{{--        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.tag.inline.table.html --}}
+{{--        ^ punctuation.definition.tag.begin.html --}}
+{{--         ^^ entity.name.tag.inline.table.html --}}
+{{--            ^^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html --}}
+{{--            ^^^^^^ entity.other.attribute-name.html --}}
+{{--                  ^ punctuation.separator.key-value.html --}}
+{{--                   ^^^^^^^^^^^ meta.string.html --}}
+{{--                   ^ string.quoted.double.html punctuation.definition.string.begin.html --}}
+{{--                    ^^^^^^^^^ source.js.embedded.html --}}
+{{--                    ^^^^ variable.other.readwrite.js --}}
+{{--                        ^ punctuation.accessor.js --}}
+{{--                         ^^^^ meta.property.object.js --}}
+{{--                             ^ string.quoted.double.html punctuation.definition.string.end.html --}}
+{{--                              ^ punctuation.definition.tag.end.html --}}
+{{--                               ^^ punctuation.definition.tag.begin.html --}}
+{{--                                 ^^ entity.name.tag.inline.table.html --}}
+{{--                                   ^ punctuation.definition.tag.end.html --}}
+            <td x-text="formatTime(item.createdAt)"></td>
+{{--        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.tag.inline.table.html --}}
+{{--        ^ punctuation.definition.tag.begin.html --}}
+{{--         ^^ entity.name.tag.inline.table.html --}}
+{{--            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html --}}
+{{--            ^^^^^^ entity.other.attribute-name.html --}}
+{{--                  ^ punctuation.separator.key-value.html --}}
+{{--                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.html --}}
+{{--                   ^ string.quoted.double.html punctuation.definition.string.begin.html --}}
+{{--                    ^^^^^^^^^^^^^^^^^^^^^^^^^^ source.js.embedded.html --}}
+{{--                    ^^^^^^^^^^ meta.function-call.js variable.function.js --}}
+{{--                              ^^^^^^^^^^^^^^^^ meta.function-call.arguments.js meta.group.js --}}
+{{--                              ^ punctuation.section.group.begin.js --}}
+{{--                               ^^^^ variable.other.readwrite.js --}}
+{{--                                   ^ punctuation.accessor.js --}}
+{{--                                    ^^^^^^^^^ meta.property.object.js --}}
+{{--                                             ^ punctuation.section.group.end.js --}}
+{{--                                              ^ string.quoted.double.html punctuation.definition.string.end.html --}}
+{{--                                               ^ punctuation.definition.tag.end.html --}}
+{{--                                                ^^ punctuation.definition.tag.begin.html --}}
+{{--                                                  ^^ entity.name.tag.inline.table.html --}}
+{{--                                                    ^ punctuation.definition.tag.end.html --}}
+            <td x-text="formatTime(item.updatedAt)"></td>
+        </tr>
+    </template>

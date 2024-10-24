@@ -91,6 +91,13 @@ contexts:
       push:
         - tag-generic-attribute-meta
         - tag-generic-attribute-value
+    - match: '{{attribute_name_start}}(x-\w+)\s*(=)'
+      captures:
+        1: entity.other.attribute-name.html
+        2: punctuation.separator.key-value.html
+      push:
+        - tag-generic-attribute-meta
+        - tag-event-attribute-value
 
   tag-event-attribute-value:
     # note: only needed for backward compatibility with ST4143
